@@ -234,16 +234,16 @@ function getArtistByIndex(array, index) {
 /* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born in and died in 20th century (1900-2000) example born in 1901 and died in 1959 - included / born in 1889 and died in 1925 not included - should return ["Salvador Dali", "Frida Kahlo"]*/
 
 //function get20s(array, person){
- //newArr = []
-  //for(i = 0; i < array.length; i++){
-  //if(array[i] === person >= 2000 && person <=1900){
-    //newArr.push(array[i])
-  //}
- // }
-    //return newArr
-//}
-//console.log(get20s(artists,))
-
+ newArr = []
+  for(i = 0; i < array.length; i++){
+  if(array[i] === person >= 2000 && person <=1900){
+    newArr.push(array[i])
+  }
+  }
+    return newArr
+}
+//console.log(get20s(artists, artists.years))
+//
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
  *     (1) artists array
  *     (2) a number which is the desired index in the array.
@@ -254,10 +254,16 @@ function getArtistByIndex(array, index) {
  * 
  * Note that sucessfully invoking this function multiple times without refreshing your browser will continuously remove artists from the array until there are none left. If you refresh your browser, the data will reset.  
 */
-function removeArtist(array, newArr) {
+function removeArtist(array, index) {
+  for(i = 0; i < array.length; i++){
+    if(array[i] === index){
+      array.splice(i,1);
+    }
+  }
     
   }
-  
+  console.log(removeArtist(artists, artists[0]))
+  console.log(removeArtist(artists, artists[1]))
 
 /**
 /* Task 6: Create a function called `addArtist` that can accept an object of information and add it to the artists array. Then, add a 21st artist to the array (you) with custom information!👩‍🎨👨‍🎨
@@ -288,12 +294,16 @@ and returns an array with names of artists who painted more than 100 paintings.
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
 
-//function lotsOfArt(artarray){
+//function lotsOfArt(array){
+  newArr = []
+    if(array >= 100){
+      newArr.push(array)
+    }
+    return newArr
 
+}
 
-//}
-
-
+//console.log(lotsOfArt(artists.paintings))
 
 // 🎨🎨 STRETCH 🎨🎨//
 
