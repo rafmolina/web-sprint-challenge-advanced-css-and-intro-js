@@ -233,31 +233,29 @@ function getArtistByIndex(array, index) {
 
 /* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born in and died in 20th century (1900-2000) example born in 1901 and died in 1959 - included / born in 1889 and died in 1925 not included - should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s(artists, years){
-  newArr = []
-  for(i = 0; i < artists.length; i++){
-  if(!artists[i] === years >= 2000 && years<= 1900){
-    newArr.push(artists[i]);
-  }
-  }
-    return newArr;
-}
-
-console.log(get20s(artists, ))
-
-//function filterByWord(arr, flavor){
-  //newArr = [];
-  //for(i = 0 ; i < arr.length ; i++){
-  //if(arr[i].includes(flavor)){
-      //newArr.push(arr[i]);
+//function get20s(artists, years){
+  //newArr = []
+  //for(i = 0; i < artists.length; i++){
+  //if(!artists[i] === years >= 2000 && years<= 1900){
+   //newArr.push(artists[i]);
   //}
   //}
-  //return newArr;
+    //return newArr;
 //}
 
+//console.log(get20s(artists, artists[7]))
 
-//console.log(filterByWord(originalFlavors, "Chocolate"))
+function get20s(array){
+  newArr = [];
+  for(i = 0; i < array.length; i++){
+    if(array[i].years >= "1900" && array[i].years <= "2000" ){
+      newArr.push(array[i].name);
+    }
+  }
+      return newArr;
+}
 
+console.log(get20s(artists))
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
  *     (1) artists array
@@ -311,14 +309,17 @@ For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte
 
 function lotsOfArt(array){
   newArr = []
-    if(array[7] >= 100){
-    newArr.push(array[7])
+  for(i = 0; i < array.length; i++){
+    if(array[i].paintings >= 100){
+    newArr.push(array[i])
+    }
     }
     return newArr
 
 }
 
 console.log(lotsOfArt(artists))
+
 
 // 🎨🎨 STRETCH 🎨🎨//
 
